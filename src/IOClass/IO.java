@@ -18,7 +18,7 @@ public class IO {
 	
 	
 	//-----------------------------------------------------------------
-	//Eingaben.
+	//Eingaben 1.0
 	//-----------------------------------------------------------------
 	public static String readString() throws IOException {
 		return br.readLine();
