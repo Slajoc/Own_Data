@@ -18,7 +18,7 @@ public class IO {
 	
 	
 	//-----------------------------------------------------------------
-	//Eingaben 1.0
+	//Eingaben
 	//-----------------------------------------------------------------
 	public static String readString() throws IOException {
 		return br.readLine();
@@ -62,7 +62,7 @@ public class IO {
 	public static double readDouble(double min) throws IOException {
 		double number = readDouble();
 		if(number <= min){
-			System.out.print("Zahl ist zu klein! Bitte geben sie eine Zahl ein die größer ist als ");
+			System.out.print("Zahl ist zu klein! Bitte geben sie eine Zahl ein die grÃ¶ÃŸer ist als ");
 			return min;
 
 		} else 
