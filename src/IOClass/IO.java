@@ -3,7 +3,6 @@ package IOClass;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class IO {
@@ -15,8 +14,8 @@ public class IO {
 	static int[] intArray = null;
 	static int defLength;
 	static boolean debug = false;
-	
-	
+
+
 	//-----------------------------------------------------------------
 	//Eingaben
 	//-----------------------------------------------------------------
@@ -25,16 +24,16 @@ public class IO {
 	}
 
 	public static int readInt(int defaultValue) throws IOException {
-		if (debug) {
+		if(debug) {
 			return defaultValue;
+
 		} else {
-			while (true) {
+			while(true) {
 				try {
 					String i = br.readLine();
-					int number = Integer.parseInt(i.trim().replace(',','.'));
-					return number;
-				}
-				catch (NumberFormatException e) {
+					return Integer.parseInt(i.trim().replace(',','.'));
+
+				} catch (NumberFormatException e) {
 					System.out.print("Keine Ganzzahl! Bitte erneut versuchen: ");
 				}
 
@@ -45,13 +44,12 @@ public class IO {
 	}
 
 	public static double readDouble() throws IOException {
-		while (true) {
+		while(true) {
 			try {
 				String i = br.readLine();
 				return Double.parseDouble(i.trim().replace(',','.'));
-				//return number;
-			}
-			catch (NumberFormatException e) {
+				
+			} catch (NumberFormatException e) {
 				System.out.print("Falsche Eingabe! Bitte erneut versuchen: ");
 			}
 
@@ -61,29 +59,32 @@ public class IO {
 
 	public static double readDouble(double min) throws IOException {
 		double number = readDouble();
-		if(number <= min){
+		if(number <= min) {
 			System.out.print("Zahl ist zu klein! Bitte geben sie eine Zahl ein die größer ist als ");
 			return min;
 
-		} else 
+		} else {
 			return number;
-
+		}
+		
 	}
 
 	public static boolean readBoolean() throws IOException {
-		while (true) {
+		while(true) {
 			String tmpEingabe = br.readLine();
-			if (tmpEingabe != null
+			if(tmpEingabe != null
 					&& tmpEingabe.equalsIgnoreCase("ja") 
 					|| tmpEingabe.equalsIgnoreCase("j")
 					|| tmpEingabe.equalsIgnoreCase("yes")
 					|| tmpEingabe.equalsIgnoreCase("y")) {
 				return true;
-			} else if (tmpEingabe != null
+				
+			} else if(tmpEingabe != null
 					&& tmpEingabe.equalsIgnoreCase("nein") 
 					|| tmpEingabe.equalsIgnoreCase("n")
 					|| tmpEingabe.equalsIgnoreCase("no")) {
 				return false;
+				
 			} else {
 				System.out.print("False Eingabe! Bitte erneut versuchen: ");
 			}
@@ -92,12 +93,12 @@ public class IO {
 
 	}
 
-	
+
 	//-----------------------------------------------------------------
 	//Arrays
 	//-----------------------------------------------------------------
 	public static double[] doubleArrayEinlesen(int defLength) {
-		if (defLength == 0) {
+		if(defLength == 0) {
 			System.out.print("Wie lang soll der Array sein: ");
 			defLength = sc.nextInt();
 		}
@@ -108,14 +109,16 @@ public class IO {
 			int zahl = sc.nextInt();
 			i--;
 			doubleArray[i] = zahl;
+			
 		}
 		return doubleArray;
 	}
 
 	public static int[] intArrayEinlesen(int defLength) {
-		if (defLength == 0) {
+		if(defLength == 0) {
 			System.out.print("Wie lang soll der Array sein: ");
 			defLength = sc.nextInt();
+			
 		}
 		intArray = new int[defLength];
 		for(int i = 0; i < intArray.length; i++){
