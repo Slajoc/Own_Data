@@ -17,7 +17,7 @@ public class IO {
 
 
 	//-----------------------------------------------------------------
-	//Eingaben Schule is kaka!,,,,.
+	//Eingaben
 	//-----------------------------------------------------------------
 	public static String readString() throws IOException {
 		return br.readLine();
