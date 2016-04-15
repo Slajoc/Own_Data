@@ -1,4 +1,4 @@
-package de.szut.dqm15.schulze.till.Lagerbestand;
+package de.szut.dqm15.s.t.Lagerbestand;
 
 import java.io.BufferedReader;
 import java.io.IOException;
