@@ -1,17 +1,14 @@
 ﻿body {
-	background-image: url(wall.gif);
+	background-image: url(bg_02.png);
 	background-position: top right;
 	border-right: 5px solid red;
 	border-left: 5px solid blue;
-
-
+	color: lime;
 }
 
 p {
 	font-size: 20px;
 	font-family: Comic Sans MS;
-
-
 }
 
 h2 {
