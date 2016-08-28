@@ -1,0 +1,35 @@
+public static EmailKontakt previous(EmailKontakt kontakt) {
+
+		Connection conn = getConnection();
+		EmailKontakt kontakt2 = EmailKontaktDAO.first();
+
+		if(kontakt.getId()-1 > kontakt2.getId()+1) {
+			try {
+				String sql = "SELECT * FROM " + DBNAME + " WHERE id < ? ORDER BY id DESC";
+				PreparedStatement statement = conn.prepareStatement(sql);
+				statement.setInt(1, kontakt.getId());
+				statement.executeQuery();
+
+				ResultSet rs = statement.executeQuery();
+				rs.next();
+
+				kontakt2 = new EmailKontakt(rs.getString("vorname"),rs.getString("nachname"), rs.getString("email"));
+				kontakt2.setId(rs.getInt("id"));
+
+				JFrameEmailverwaltung.check(3);
+
+			} catch(SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try{
+					conn.close();
+				} catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		else{
+			JFrameEmailverwaltung.check(0);
+		}
+		return kontakt2;
+	}
